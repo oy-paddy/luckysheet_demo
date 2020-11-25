@@ -32,8 +32,12 @@ public class IndexController {
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd_HHmmss");
         String fileNameNew = title + "_" + dateFormat.format(date) + ".xlsx";
 
-        //生成文件
-        ExcelUtils.exportLuckySheetXlsx(title, fileDirNew, fileNameNew, exceldata);
+        //1-基于模板 导出生成文件
+        //ExcelUtils.exportLuckySheetXlsx(title, fileDirNew, fileNameNew, exceldata);
+        
+        //2-基于POI 生成导出文件
+        ExcelUtils.exportLuckySheetXlsxByPOI(title, fileDirNew, fileNameNew, exceldata);
+
         return "ok";
     }
 
